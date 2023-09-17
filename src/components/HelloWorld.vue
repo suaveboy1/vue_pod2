@@ -22,7 +22,7 @@
 
     <div class="card"> 
 
-        <img src="https://media.istockphoto.com/id/1369053959/vector/house.jpg?s=612x612&w=0&k=20&c=iA7YgnbjMT89OD8WDtINPoD6p4-sY-GVp1Tt0YdeqxA=" alt="Card Image/logo"> 
+        <img alt="Card Image/logo" src="./assets/housepic.jpg"> 
 
         <div class="card-content"> 
 
