@@ -44,57 +44,6 @@
   <button id="dltbtn">DeleteCard</button>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      msg: 'Hello, World!'
-    };
-  },
-  methods: {
-    randomColor() {
-      var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-      var letters = ["A", "B", "C", "D", "E", "F"];
-      var color = "";
-      for (var i = 0; i < 3; i++) {
-        var index = Math.floor(Math.random() * (numbers.length + letters.length));
-        color += (index < numbers.length) ? numbers[index] : letters[index - numbers.length];
-      }
-      return color;
-    },
-    changeBackgroundColor() {
-      const card = document.querySelector('.card');
-      // Change background color
-      card.style.backgroundColor = '#' + this.randomColor();
-    },
-    changeHeading() {
-      const title = document.querySelector('h2');
-      title.innerText = "Super Pod 2 Realty";
-    },
-    deleteCard() {
-      const cards = document.querySelectorAll('.card');
-      // Check if there are cards to delete
-      if (cards.length > 1) {
-        const lastCard = cards[cards.length - 1];
-        lastCard.parentNode.removeChild(lastCard);
-      }
-    },
-    toggleDescription() {
-      const description = document.querySelector('#description');
-      // Toggle the visibility of the description
-      if (description.style.display === 'none' || description.style.display === '') {
-        description.style.display = 'block'; // Show the description
-      } else {
-        description.style.display = 'none'; // Hide the description
-      }
-    }
-  },
-  mounted() {
-    const detailsBtn = document.querySelector('#detailsBtn');
-    detailsBtn.addEventListener('click', this.toggleDescription);
-  }
-}
-</script>
 
 <script>
 export default {
