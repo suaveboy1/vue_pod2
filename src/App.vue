@@ -13,7 +13,7 @@ export default {
   }
 }
 </script>
-
+<img alt="Vue logo" src="./assets/housepic.jpg"></img>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
