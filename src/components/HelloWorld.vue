@@ -45,12 +45,17 @@
   <button id="dltbtn">DeleteCard</button>
 </template>
 <script>
-    document.querySelector('#btn').addEventListener('click',function(e){
+export default {
+  name: 'HelloWorld',
+  props: {
+    msg: String
+  }
+}
+    document.querySelector('#btn').addEventListener('click',function(){
       const clone = document.querySelector('#card').cloneNode('card');
       document.body.appendChild(clone);
     })
-  </script>
-   <script>
+
         var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
         var letters = ["A", "B", "C", "D", "E", "F"];
         function randomColor() {
@@ -61,24 +66,20 @@
             }
             return color;
         }
-        document.querySelector('#colorBtn').addEventListener('click', function (e) {
+        document.querySelector('#colorBtn').addEventListener('click', function () {
             const card = document.querySelector('.card');
             // Check the current background color
             const currentColor = card.style.backgroundColor;
             // Change background color
             card.style.backgroundColor = '#' + randomColor();
         });
-    </script>
-  <script>
     //HEADING CHANGER
-    document.querySelector('#Headingbtn').addEventListener('click', function(e){
+    document.querySelector('#Headingbtn').addEventListener('click', function(){
       const title = document.querySelector('h2');
       title.innerText = "Super Pod 2 Realty";
     })
-  </script>
-  <script>
     //card delete
-    document.querySelector('#dltbtn').addEventListener('click', function(e){
+    document.querySelector('#dltbtn').addEventListener('click', function(){
       const cards = document.querySelectorAll('.card');
       //GPT Assist:
       // Check if there are cards to delete
@@ -87,10 +88,8 @@
         lastCard.parentNode.removeChild(lastCard);
     }
     })
-  </script>
-  <script>
     var original= document.querySelector('#description').innerText;
-document.querySelector('#detailsBtn').addEventListener('click', function(e) {
+document.querySelector('#detailsBtn').addEventListener('click', function() {
     const description = document.querySelector('#description');
     // Toggle the visibility of the description
     if (description.innerText === 'none' || description.innerText=== '') {
@@ -99,15 +98,9 @@ document.querySelector('#detailsBtn').addEventListener('click', function(e) {
         description.innerText = ''; // Hide the description
     }
 });
-  </script>
-<script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
 </script>
+
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
