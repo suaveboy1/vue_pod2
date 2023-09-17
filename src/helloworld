@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Vue.js</title>
+    <!-- Include Vue.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Vue.js will replace this element's content -->
+        {{ message }}
+    </div>
+
+    <script>
+        // Create a new Vue instance
+        new Vue({
+            el: '#app', // Mount to the element with the id 'app'
+            data: {
+                message: 'Hello, World!' // Your message
+            }
+        });
+    </script>
+</body>
+</html>
