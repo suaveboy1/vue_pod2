@@ -28,6 +28,9 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
   </div>
+  <div>
+    <img alt="Vue logo" src="./assets/housepic.jpg">
+  </div>
 </template>
 
 <script>

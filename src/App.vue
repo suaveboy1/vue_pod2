@@ -1,6 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="HELLO WORLD"/>
+
 </template>
 
 <script>
@@ -13,7 +14,7 @@ export default {
   }
 }
 </script>
-<img alt="Vue logo" src="./assets/housepic.jpg"></img>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
