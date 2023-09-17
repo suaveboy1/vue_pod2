@@ -6,98 +6,6 @@
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
-    <div id="card" class="card">
-<head> 
-    <meta charset="UTF-8"> 
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-    <link rel="stylesheet" href="styles.css"> 
-
-    <title>Card Example</title> 
-
-</head> 
-
-<body> 
-
-    <div class="card"> 
-
-        <img alt="Card Image/logo" src="./assets/housepic.jpg"> 
-
-        <div class="card-content"> 
-
-            <h2>Two Pod Realty</h2> 
-
-            <p id= 'description'>Real Estate Company Focused on delivering the best properties in the State College Area</p> 
-
-            <button class="details-button" id="detailsBtn">Details</button>
-          
-        </div> 
-
-    </div> 
-
-</body> 
-  </div>
-  <button id ="btn">Duplicator</button>
-  <button id="colorBtn">BGColorChanger</button>
-  <button id="Headingbtn">HeadingChanger</button>
-  <button id ="dltbtn">DeleteCard</button>
-  <script>
-    document.querySelector('#btn').addEventListener('click',function(e){
-      const clone = document.querySelector('#card').cloneNode('card');
-      document.body.appendChild(clone);
-    })
-  </script>
-   <script>
-        var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-        var letters = ["A", "B", "C", "D", "E", "F"];
-        function randomColor() {
-            var color = "";
-            for (var i = 0; i < 3; i++) {
-                var index = Math.floor(Math.random() * (numbers.length + letters.length));
-                color += (index < numbers.length) ? numbers[index] : letters[index - numbers.length];
-            }
-            return color;
-        }
-        document.querySelector('#colorBtn').addEventListener('click', function (e) {
-            const card = document.querySelector('.card');
-            // Check the current background color
-            const currentColor = card.style.backgroundColor;
-            // Change background color
-            card.style.backgroundColor = '#' + randomColor();
-        });
-    </script>
-  <script>
-    //HEADING CHANGER
-    document.querySelector('#Headingbtn').addEventListener('click', function(e){
-      const title = document.querySelector('h2');
-      title.innerText = "Super Pod 2 Realty";
-    })
-  </script>
-  <script>
-    //card delete
-    document.querySelector('#dltbtn').addEventListener('click', function(e){
-      const cards = document.querySelectorAll('.card');
-      //GPT Assist:
-      // Check if there are cards to delete
-    if (cards.length > 2) {
-        const lastCard = cards[cards.length - 1];
-        lastCard.parentNode.removeChild(lastCard);
-    }
-    })
-  </script>
-  <script>
-    var original= document.querySelector('#description').innerText;
-document.querySelector('#detailsBtn').addEventListener('click', function(e) {
-    const description = document.querySelector('#description');
-    // Toggle the visibility of the description
-    if (description.innerText === 'none' || description.innerText=== '') {
-        description.innerText = original; // Show the description
-    } else {
-        description.innerText = ''; // Hide the description
-    }
-});
-  </script>
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -121,6 +29,73 @@ document.querySelector('#detailsBtn').addEventListener('click', function(e) {
     </ul>
   </div>
 </template>
+
+<div class="card"> 
+  <img alt="Card Image/logo" src="./assets/housepic.jpg"> 
+  <div class="card-content"> 
+    <h2>Two Pod Realty</h2> 
+    <p id="description">Real Estate Company Focused on delivering the best properties in the State College Area</p> 
+    <button class="details-button" id="detailsBtn">Details</button>
+  </div> 
+</div> 
+
+<button id="btn">Duplicator</button>
+<button id="colorBtn">BGColorChanger</button>
+<button id="Headingbtn">HeadingChanger</button>
+<button id="dltbtn">DeleteCard</button>
+</template>
+
+<script>
+export default {
+data() {
+  return {
+    msg: 'Hello, World!'
+  };
+},
+methods: {
+  randomColor() {
+    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    var letters = ["A", "B", "C", "D", "E", "F"];
+    var color = "";
+    for (var i = 0; i < 3; i++) {
+      var index = Math.floor(Math.random() * (numbers.length + letters.length));
+      color += (index < numbers.length) ? numbers[index] : letters[index - numbers.length];
+    }
+    return color;
+  },
+  changeBackgroundColor() {
+    const card = document.querySelector('.card');
+    // Change background color
+    card.style.backgroundColor = '#' + this.randomColor();
+  },
+  changeHeading() {
+    const title = document.querySelector('h2');
+    title.innerText = "Super Pod 2 Realty";
+  },
+  deleteCard() {
+    const cards = document.querySelectorAll('.card');
+    // Check if there are cards to delete
+    if (cards.length > 1) {
+      const lastCard = cards[cards.length - 1];
+      lastCard.parentNode.removeChild(lastCard);
+    }
+  },
+  toggleDescription() {
+    const description = document.querySelector('#description');
+    // Toggle the visibility of the description
+    if (description.style.display === 'none' || description.style.display === '') {
+      description.style.display = 'block'; // Show the description
+    } else {
+      description.style.display = 'none'; // Hide the description
+    }
+  }
+},
+mounted() {
+  const detailsBtn = document.querySelector('#detailsBtn');
+  detailsBtn.addEventListener('click', this.toggleDescription);
+}
+}
+</script>
 
 <script>
 export default {
