@@ -29,7 +29,7 @@
     </ul>
   </div>
   <div>
-    <img alt="Vue logo" src="./assets/housepic.jpg">
+    <img alt="Vue logo" src="./housepic.jpg">
   </div>
 </template>
 
